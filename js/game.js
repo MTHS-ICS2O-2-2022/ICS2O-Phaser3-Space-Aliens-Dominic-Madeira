@@ -4,7 +4,7 @@
 //
 // Created by: Dominic M.
 // Created on: Apr 2023
-// This is the Paser3 game configuration file
+// This is the Phaser3 game configuration file
 
 /**
  * Start Phaser Game.
