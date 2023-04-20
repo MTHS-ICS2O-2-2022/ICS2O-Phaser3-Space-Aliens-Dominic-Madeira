@@ -1,15 +1,15 @@
 /* global Phaser */
 
-// Copyright (c) 2023 Dominic M. All rights reserved
+//* Copyright (c) 2023 Dominic M. All rights reserved
 //
 // Created by: Dominic M.
 // Created on: Apr 2023
 // This is the Phaser3 game configuration file
 
-/**
- * Start Phaser Game.
- */
+import SplashScene from "./splashScene.js"
 
+// Our game scene
+const splashScene = new SplashScene()
 //* Game scene */
 const config = {
   type: Phaser.AUTO,
@@ -31,4 +31,9 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-console.log(game)
+
+// load scenes
+game.scene.add('splashScene', splashScene)
+
+// start title
+game.scene.start ('splashScene')
