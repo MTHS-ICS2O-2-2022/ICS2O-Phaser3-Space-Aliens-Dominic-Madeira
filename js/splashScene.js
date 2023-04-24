@@ -14,7 +14,7 @@ class SplashScene extends Phaser.Scene {
   /**
    * Can be defined on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
-   *   befire preload() and create().
+   *   before preload() and create().
    *@param {object} data - Data passed via ScenePlugin.add() or ScenePlugin.start().
   */
   init (data) {
