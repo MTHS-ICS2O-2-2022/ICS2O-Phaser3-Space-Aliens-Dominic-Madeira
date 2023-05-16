@@ -93,6 +93,14 @@ class GameScene extends Phaser.Scene {
     }
 
     if (keySpaceObj.isDown === true) {
+      if (this.fireMissile === false) {
+        this.fireMissile = true
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'missile')
+        this.missileGroup.add(aNewMissile)
+      }
+    }
+    
+    if (keySpaceObj.isUp === true) {
       this.fireMissile = false
     }
   }
