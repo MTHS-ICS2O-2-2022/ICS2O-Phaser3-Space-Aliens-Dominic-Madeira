@@ -48,6 +48,7 @@ class GameScene extends Phaser.Scene {
     this.load.image('missile', './assets/missile.png')
 
     this.load.audio('laser', './assets/laser1.wav')
+    this.load.audio('explosion', './assets/barrelExploding.wav')
   }
 
   /**
@@ -65,7 +66,16 @@ class GameScene extends Phaser.Scene {
 
     this.alienGroup = this.add.group()
     this.createAlien()
-  }
+
+    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
+      missileCollide.destroy()
+      alienCollide.destroy()
+      this.sound.play('explosion')
+      this.createAlien()
+      this.createAlien()
+    }.bind(this))
+    }
+  
 
   /**
    * Should be overridden by your own Scenes.
